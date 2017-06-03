@@ -11,7 +11,7 @@ COPY files $HOME/files
 RUN cd $HOME && \
     curl -O -L https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-$JDBC_VER.tar.gz && \
     md5sum mysql-connector-java-$JDBC_VER.tar.gz | grep $JDBC_MD5 && \
-    tar -xzf mysql-connerctor-java-$JDBC_VER.tar.gz && \
+    tar -xzf mysql-connector-java-$JDBC_VER.tar.gz && \
     mkdir -p $JBOSS_HOME/modules/system/layers/base/com/mysql/main && \
     ln -s $HOME/mysql-connector-java-$JDBC_VER/mysql-connector-java-5.1.42-bin.jar $JBOSS_HOME/modules/system/layers/base/com/mysql/main/mysql-connector-java.jar && \
     cp $HOME/files/module.xml $JBOSS_HOME/modules/system/layers/base/com/mysql/main/ && \

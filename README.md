@@ -4,24 +4,24 @@ extended oficial jboss docker image prepared to work with mysql (not mariadb), p
 
 * to work with mysql do:
 
-`docker pull phozzy/wildfly:mysql`
+`docker pull plussell/jboss:mysql`
 
 ```
 docker run --name='some_name' -it -p 8080:8080 \
 -e DB_USER='your_user' \
 -e DB_PASSWORD='your_password' \
 -e DB_CONNECTION='jdbc:mysql://your_host/your_database' \
-phozzy/docker-wildfly:mysql
+plussell/jboss:mysql
 ```
 
 * to work with postgresql do:
 
-`docker pull phozzy/wildfly:postgresql`
+`docker pull plussell/jboss:postgresql`
 
 ```
 docker run --name='some_name' -it -p 8080:8080 \
 -e DB_USER='your_user' \
 -e DB_PASSWORD='your_password' \
 -e DB_CONNECTION='jdbc:postgresql://your_host/your_database' \
-phozzy/docker-wildfly:postgresql
+plussell/jboss:postgresql
 ```

@@ -18,6 +18,11 @@ RUN cd $HOME && \
     sed -i -e '/<datasources>/ r $HOME/files/datasource.xml' $JBOSS_HOME/standalone/configuration/standalone.xml && \
     sed -i -e '/<drivers>/ r $HOME/files/driver.xml' $JBOSS_HOME/standalone/configuration/standalone.xml
 
+# Cleanup
+USER root
+RUN rm -rf /opt/jboss/files
+USER jboss
+
 EXPOSE 8080 9990
 
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]

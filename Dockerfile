@@ -7,7 +7,7 @@ ENV JDBC_MD5 bc23a03d813af3f7ac44b8e7a5cb0d54
 ENV JDBC_VER 5.1.42
 
 # add database conndection
-COPY files $HOME/files
+COPY files /opt/jboss/files
 RUN cd $HOME && \
     curl -O -L https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-$JDBC_VER.tar.gz && \
     md5sum mysql-connector-java-$JDBC_VER.tar.gz | grep $JDBC_MD5 && \
